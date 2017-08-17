@@ -48,5 +48,39 @@ public class Utilities {
         }
         return cadena;
     }
+    /**
+     * un buscador de frases en el texto
+     * @param Frase
+     * @param Texto
+     * @return 
+     */
+    public int contarCoincidencias(String Frase, String Texto){
+    
+        int coincidencias=0;
+        int contadorTexto;
+        int contadorFrase;
+        int longitud=Frase.length();
+        boolean coincidencia=false;
+        for(contadorTexto=0;contadorTexto<Texto.length();contadorTexto++){
+            for(contadorFrase=0;contadorFrase<Frase.length();contadorFrase++){
+            
+                if(Frase.charAt(contadorFrase)==Texto.charAt(contadorTexto)){
+                
+                    coincidencia=true;
+                }else{
+                
+                    coincidencia=false;
+                    break;
+                }
+            }
+            if(coincidencia){
+            
+                coincidencias++;
+            }
+        
+            
+        }
+        return coincidencias;
+    }
     
 }
